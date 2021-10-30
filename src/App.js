@@ -7,6 +7,9 @@ import Login from './Componenets/Login/Login/Login';
 import Header from './Componenets/Shared/Header/Header';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Componenets/Login/PrivateRoute/PrivateRoute';
+import About from './Componenets/About/About';
+import Teams from './Componenets/Home/Teams/Teams';
+
 
 
 function App() {
@@ -22,13 +25,20 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          
           <Route path="/login">
             <Login></Login>
           </Route>
+          <PrivateRoute path="/about">
+            <About></About>
+          </PrivateRoute>
           <PrivateRoute path="/destination/:destinationId">
             <MoreDestinationInfo></MoreDestinationInfo>
-
           </PrivateRoute>
+          <PrivateRoute path="/teams">
+            <Teams></Teams>
+          </PrivateRoute>
+          
           <Route path="*">
             <NotFound></NotFound>
           </Route>
