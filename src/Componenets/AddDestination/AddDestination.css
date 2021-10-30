@@ -1,0 +1,16 @@
+.add-destination form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-destination form input, textarea{
+    width: 60%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    
+}
+.add-destination{
+    color:rgb(10, 78, 78);
+    background-color: rgb(199, 235, 247);
+}

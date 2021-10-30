@@ -9,6 +9,7 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Componenets/Login/PrivateRoute/PrivateRoute';
 import About from './Componenets/About/About';
 import Teams from './Componenets/Home/Teams/Teams';
+import AddDestination from './Componenets/AddDestination/AddDestination';
 
 
 
@@ -37,6 +38,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/teams">
             <Teams></Teams>
+          </PrivateRoute>
+          <PrivateRoute path="/addDestination">
+            <AddDestination></AddDestination>
           </PrivateRoute>
           
           <Route path="*">

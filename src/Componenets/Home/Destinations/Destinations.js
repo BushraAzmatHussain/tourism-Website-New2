@@ -5,7 +5,7 @@ import './destinations.css';
 const Destinations = () => {
     const [destinations, setDestinations] = useState([])
     useEffect(()=>{
-        fetch('destinations.json')
+        fetch('http://localhost:5000/destinations')
         .then(res=> res.json())
         .then(data=> setDestinations(data));
     }, [])

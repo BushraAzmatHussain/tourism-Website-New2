@@ -4,30 +4,37 @@ import {Link} from 'react-router-dom';
 
 const MoreDestinationInfo = () => {
     const {destinationId} = useParams();
-    const [detail ,setDetail] = useState([]);
-    useEffect(()=>{
-        fetch('/destinations.json')
-        .then(response => response.json())
-        .then(data => {
-            const item = data?.find(item => parseInt(item.id) === parseInt(destinationId));
-            setDetail(item);
-        });
-    },[]);
+    const [destination, setDestination] = useState({})
+
+    useEffect(() =>{
+        fetch(`http://localhost:5000/destinations/${destinationId}`)
+        .then(res => res.json())
+        .then(data => setDestination(data));
+    },[])
+    
     return (
-        <div className="background">
-            
-            <h2 className="fw-bold p-5">{detail?.name}</h2>
-            <img src={detail?.img} alt="" />
+        
+        <div className="p-5">
+            <h2 className="fw-bold p-5">{destination.Name}</h2>
+            <img src={destination.img} alt="" />
             <div className="p-5 m-5">
-            <p >{detail?.description}</p>
-            <p>{detail?.details}</p>
-            
+            <p>{destination.description}</p>
+            <p>{destination.details}</p>
+            </div>
+            <h2 className="fw-bold text-primary p-3">BDT {destination.price}</h2>
             <Link to="/">
             <button className="btn btn-dark fw-bold">Visit Now</button>
             </Link>
-            </div>
+                      
+        
         </div>
     );
 };
 
 export default MoreDestinationInfo;
+
+
+
+
+
+
