@@ -18,7 +18,32 @@ const Header = () => {
     <Nav.Link as={HashLink} to="/about">About Us</Nav.Link>
       <Nav.Link as={HashLink} to="/home#destinations">Destinations</Nav.Link>
       <Nav.Link as={HashLink} to="/teams">Our Team</Nav.Link>
+
+      {user.email && (
+        
+      <span>
       <Nav.Link as={HashLink} to="/addDestination">Add a New Destination</Nav.Link>
+
+      </span>
+      )
+      }
+{user.email && (
+        
+        <span>
+<Nav.Link as={HashLink} to="/manageBookings">My Bookings</Nav.Link>
+</span>
+      )
+      }
+      {user.email && (
+        
+        <span>
+
+<Nav.Link as={HashLink} to="/orders">Manage All Bookings</Nav.Link>
+      </span>
+      )
+      }
+      
+      
       {user?.email ? 
         <Button onClick={logOut} variant="light">LogOut</Button>: 
         <Nav.Link as={Link} to="/login">Login</Nav.Link> 

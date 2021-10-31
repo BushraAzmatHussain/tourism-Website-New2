@@ -10,6 +10,8 @@ import PrivateRoute from './Componenets/Login/PrivateRoute/PrivateRoute';
 import About from './Componenets/About/About';
 import Teams from './Componenets/Home/Teams/Teams';
 import AddDestination from './Componenets/AddDestination/AddDestination';
+import ManageBookings from './Componenets/ManageBookings/ManageBookings';
+import MyOrder from './Componenets/MyOrder/MyOrder';
 
 
 
@@ -41,6 +43,12 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/addDestination">
             <AddDestination></AddDestination>
+          </PrivateRoute>
+          <PrivateRoute path="/manageBookings">
+            <ManageBookings></ManageBookings>
+          </PrivateRoute>
+          <PrivateRoute path="/orders">
+            <MyOrder></MyOrder>
           </PrivateRoute>
           
           <Route path="*">
