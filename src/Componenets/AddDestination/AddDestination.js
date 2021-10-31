@@ -8,7 +8,7 @@ const AddDestination = () => {
 
     const onSubmit = data =>{
         console.log(data);
-        axios.post('http://localhost:5000/destinations',data)
+        axios.post('https://grim-spell-21442.herokuapp.com/destinations',data)
         .then(res =>{
             if(res.data.insertedId){
                 alert('Added successfully!');
